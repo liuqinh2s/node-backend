@@ -5,7 +5,7 @@ app.get("/say", function (req, res) {
   let { wd, callback } = req.query;
   console.log(wd); // Iloveyou
   console.log(callback); // show
-  res.send(`${callback}('我不爱你')`);
+  res.end(`${callback}('我不爱你')`);
 });
 
 app.listen(3000);
