@@ -1,10 +1,11 @@
-// index.js
+let express = require("express");
+let app = express();
 
-var express = require("express");
-var app = express();
-app.get("/", function (req, res) {
-  res.send("Hello world!");
+app.get("/say", function (req, res) {
+  let { wd, callback } = req.query;
+  console.log(wd); // Iloveyou
+  console.log(callback); // show
+  res.send(`${callback}('我不爱你')`);
 });
+
 app.listen(3000);
-console.log("server started");
-console.log("address: http://localhost:3000");
